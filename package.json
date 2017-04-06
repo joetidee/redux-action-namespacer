@@ -24,7 +24,6 @@
     "lib/"
   ],
   "module": "lib/",
-  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-loader": "^6.3.2",
