@@ -80,6 +80,7 @@ export const ACTIONS = nsActionTypes({
 
 this is the resulting value of the ACTIONS constant:
 
+```
 export const ACTIONS = {
     table: {
         loading: 'table.loading',
@@ -91,3 +92,4 @@ export const ACTIONS = {
         }
     }
 };
+```
