@@ -1,8 +1,10 @@
 # redux-action-namespacer
 Provides a way to define your Redux action types in a structured way.
 
+***
 ### Installation
 `npm i redux-action-namespacer --save`
+
 ***
 ### Example of how to use this package
 Lets say you have a grid (which can contain rows of data, allows the user to search by keyword, allows the user to sort the columns and also limit the number of results returned). You might ordinarily define your action types like this:
@@ -66,6 +68,7 @@ describe('nsActionTypesCheck()', function() {
     });
 });
 ```
+
 ***
 ## Function definitions
 ### nsActionTypes(actionTypes) 
@@ -77,8 +80,9 @@ describe('nsActionTypesCheck()', function() {
 @param `actiontypes` *{array}* - Action Type definition (see example above).
 
 @returns *true* or throws an *Error*
+
 ***
-### How it works.
+## How it works.
 As per the example above, when you pass your action type definitions through the nsActionTypes() function, it returns an object structure like this:
 ```javascript
 export const ACTIONS = {
