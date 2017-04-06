@@ -23,7 +23,7 @@ With redux-action-namespacer you can structure your action types in a logical wa
 ```javascript
 import { nsActionTypes } from 'redux-action-namespacer';
 
-let actionTypes = [
+const actionTypes = [
     'table', [
         'loading',
         'data',
