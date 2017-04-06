@@ -6,11 +6,11 @@ Provides a way to define your action types in a structured way.
 Lets say you have a grid (which can contain rows of data, allows the user to search by keyword, allows the user to sort the columns and also limit the number of results returned). You might ordinarily define your action types like this:
 
 ```
-const TABLE_LOADING = 'SET_TABLE_LOADING'; // Shows a loading indicator.
-const TABLE_DATA = 'SET_TABLE_DATA'; // Stores the table data.
-const TABLE_QUERY_SORT = 'SET_TABLE_QUERY_SORT'; // Sets a query parameter to sort the data.
-const TABLE_LIMIT = 'SET_TABLE_QUERY_LIMIT'; // Sets a limit on the number of records to return.
-const TABLE_SEARCH = 'SET_TABLE_QUERY_SEARCH'; // Sets a search term.
+const TABLE_LOADING = 'TABLE_LOADING'; // Shows a loading indicator.
+const TABLE_DATA = 'TABLE_DATA'; // Stores the table data.
+const TABLE_QUERY_SORT = 'TABLE_QUERY_SORT'; // Sets a query parameter to sort the data.
+const TABLE_LIMIT = 'TABLE_QUERY_LIMIT'; // Sets a limit on the number of records to return.
+const TABLE_SEARCH = 'TABLE_QUERY_SEARCH'; // Sets a search term.
 ```
 
 With redux-action-namespacer you can structure your action types in a logical way (this structure is IDE friendly):
