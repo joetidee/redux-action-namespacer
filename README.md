@@ -15,7 +15,7 @@ const TABLE_LIMIT = 'TABLE_QUERY_LIMIT'; // Sets a limit on the number of record
 const TABLE_SEARCH = 'TABLE_QUERY_SEARCH'; // Sets a search term.
 ```
 
-With redux-action-namespacer you can structure your action types in a logical way (this structure is IDE friendly):
+With redux-action-namespacer you can structure your action types in a logical way:
 
 (actionTypes.js)
 ```
@@ -78,7 +78,7 @@ export const ACTIONS = nsActionTypes({
 });
 ```
 
-this is the resulting value of the ACTIONS constant:
+this is the resulting value of the ACTIONS constant (this structure is code-editor friendly):
 
 ```
 export const ACTIONS = {
