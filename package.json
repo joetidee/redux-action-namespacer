@@ -24,11 +24,7 @@
     "lib/"
   ],
   "module": "lib/",
-  "dependencies": {
-  },
-  "peerDependencies": {
-    "redux": "^3.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-loader": "^6.3.2",
@@ -39,7 +35,6 @@
     "chai-subset": "^1.4.0",
     "mocha": "^3.2.0",
     "mocha-webpack": "^0.7.0",
-    "sinon": "^1.17.7",
     "source-map-support": "^0.4.11",
     "webpack": "^2.2.1",
     "webpack-node-externals": "^1.5.4"

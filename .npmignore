@@ -2,6 +2,7 @@
 src/
 test/
 .tmp/
+old/
 node_modules/
 .babelrc
 mocha-webpack.opts
