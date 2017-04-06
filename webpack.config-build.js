@@ -23,5 +23,5 @@ module.exports = {
 		libraryTarget: 'umd',
 		umdNamedDefine: true
     },
-    target: 'browser'
+    target: 'web'
 };

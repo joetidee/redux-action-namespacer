@@ -10,7 +10,7 @@
     "build": "WEBPACK_ENV=build webpack --config webpack.config-build.js"
   },
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bugs": "https://github.com/joetidee/redux-action-namespacer/issues",
   "repository": {
     "type": "git",
