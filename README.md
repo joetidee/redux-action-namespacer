@@ -33,7 +33,7 @@ export const ACTIONS = nsActionTypes({
     }
 });
 ```
-
+Note that the value `true` simply represents a value that the `nsActionTypes()` function uses the know when to stop going deeper within that branch - the value is always `true`.
 Then, in your reducers file, you can import these action types to use directly in your reducers:
 
 (reducers.js)
@@ -61,3 +61,33 @@ const tablesReducer = (state = initialState, action) => {
 }
 export default tablesReducer;
 ```
+
+### How it works.
+As per the example above, when you pass your action type definitions through the nsActionTypes() function...
+```
+export const ACTIONS = nsActionTypes({
+    table: {
+        loading: true,
+        data: true,
+        query: {
+            sort: true,
+            limit: true,
+            search: true
+        }
+    }
+});
+```
+
+this is the resulting value of the ACTIONS constant:
+
+export const ACTIONS = {
+    table: {
+        loading: 'table.loading',
+        data: 'table.data',
+        query: {
+            sort: 'table.query.sort',
+            limit: 'table.query.limit',
+            search: 'table.query.search'
+        }
+    }
+};
