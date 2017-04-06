@@ -3,7 +3,7 @@ Provides a way to define your Redux action types in a structured way.
 
 ### Installation
 `npm i redux-action-namespacer --save`
-
+***
 ### Example of how to use this package
 Lets say you have a grid (which can contain rows of data, allows the user to search by keyword, allows the user to sort the columns and also limit the number of results returned). You might ordinarily define your action types like this:
 
@@ -17,7 +17,7 @@ const TABLE_SEARCH = 'TABLE_QUERY_SEARCH'; // Sets a search term.
 
 With redux-action-namespacer you can structure your action types in a logical way:
 
-(actionTypes/actionTypes.js)
+*actionTypes/actionTypes.js*
 ```javascript
 import { nsActionTypes } from 'redux-action-namespacer';
 
@@ -38,7 +38,7 @@ export const ACTIONS = nsActionTypes(actionTypes);
 
 Then, in your reducers file, you can import these action types to use directly in your reducers:
 
-(reducers/reducers.js)
+*reducers/reducers.js*
 ```javascript
 import ACTIONS from '../actionTypes/actionTypes.js';
 
@@ -54,7 +54,7 @@ export default tablesReducer;
 
 The `nsActionTypesCheck()` function can be used check that there are no namespace conflicts within your action type definitions. It would be best to use this function in your test suite to make a one-time test against your action types definitions. For example:
 
-test/test.js
+*test/test.js*
 ```javascript
 import { actionTypes } from '../actionTypes/actionTypes.js';
 import { nsActionTypesCheck } from 'redux-action-namespacer';
@@ -66,7 +66,18 @@ describe('nsActionTypesCheck()', function() {
     });
 });
 ```
+***
+## Function definitions
+### nsActionTypes(actionTypes) 
+@param `actiontypes` *{array}* - Action Type definition (see example above).
 
+@returns *{object}*
+
+### nsActionTypesCheck(actionTypes)
+@param `actiontypes` *{array}* - Action Type definition (see example above).
+
+@returns *true* or throws an *Error*
+***
 ### How it works.
 As per the example above, when you pass your action type definitions through the nsActionTypes() function, it returns an object structure like this:
 ```javascript
