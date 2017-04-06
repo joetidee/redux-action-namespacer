@@ -2,11 +2,11 @@
 Provides a way to define your Redux action types in a structured way.
 
 ***
-### Installation
+## Installation
 `npm i redux-action-namespacer --save`
 
 ***
-### Example of how to use this package
+## Example of how to use this package
 Lets say you have a grid (which can contain rows of data, allows the user to search by keyword, allows the user to sort the columns and also limit the number of results returned). You might ordinarily define your action types like this:
 
 ```javascript
