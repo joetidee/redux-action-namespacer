@@ -1,5 +1,5 @@
 # redux-action-namespacer
-Provides a way to define your Redux action types in a structured way.
+Provides a way to define your Redux action types in a structured way, that can be easily namespace-checked and is code-editor friendly.
 
 ***
 ## Installation
