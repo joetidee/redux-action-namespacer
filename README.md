@@ -21,65 +21,36 @@ With redux-action-namespacer you can structure your action types in a logical wa
 ```
 import { nsActionTypes } from 'redux-action-namespacer';
 
-export const ACTIONS = nsActionTypes({
-    table: {
-        loading: true,
-        data: true,
-        query: {
-            sort: true,
-            limit: true,
-            search: true
-        }
-    }
-});
+export const ACTIONS = nsActionTypes([
+    'table', [
+        'loading',
+        'data',
+        'query', [
+            'sort',
+            'limit',
+            'search'
+        ]
+    ]
+]);
 ```
-Note that the value `true` simply represents a value that the `nsActionTypes()` function uses the know when to stop going deeper within that branch - the value is always `true`.
+
 Then, in your reducers file, you can import these action types to use directly in your reducers:
 
 (reducers.js)
 ```
 import ACTIONS from './actionTypes.js';
 
-// This illustrates the store state for your table.
-const initialState = {
-    table: {
-        loading: false,
-        data: [],
-        query: {
-            sort: {},
-            limit: 50,
-            search: ""
-        }
-    }
-};
-
 const tablesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ACTIONS.table.loading: // HERE is where your action type structure works nicely.
-            return {...state, table: { ...state.table, loading: action.payload.loading }};
+        case ACTIONS.table.loading: // Here is where your action type structure works nicely.
+            ...
     }
 }
 export default tablesReducer;
 ```
 
 ### How it works.
-As per the example above, when you pass your action type definitions through the nsActionTypes() function...
-```
-export const ACTIONS = nsActionTypes({
-    table: {
-        loading: true,
-        data: true,
-        query: {
-            sort: true,
-            limit: true,
-            search: true
-        }
-    }
-});
-```
-
-this is the resulting value of the ACTIONS constant (this structure is code-editor friendly):
-
+As per the example above, when you pass your action type definitions through the nsActionTypes() function, it returns an object structure like this:
 ```
 export const ACTIONS = {
     table: {
@@ -93,3 +64,5 @@ export const ACTIONS = {
     }
 };
 ```
+
+This enables you to type your action types with dot-notation and is also code-editor friendly.
