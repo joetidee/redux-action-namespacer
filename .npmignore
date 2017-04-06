@@ -1,0 +1,9 @@
+.idea/
+src/
+test/
+.tmp/
+node_modules/
+.babelrc
+mocha-webpack.opts
+webpack.config-build.js
+webpack.config-test.js
