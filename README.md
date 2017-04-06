@@ -1,5 +1,5 @@
 # redux-action-namespacer
-Provides a way to define your action types in a structured way.
+Provides a way to define your Redux action types in a structured way.
 
 ### Installation
 `npm i redux-action-namespacer --save`
@@ -17,11 +17,11 @@ const TABLE_SEARCH = 'TABLE_QUERY_SEARCH'; // Sets a search term.
 
 With redux-action-namespacer you can structure your action types in a logical way:
 
-(actionTypes.js)
+(actionTypes/actionTypes.js)
 ```
 import { nsActionTypes } from 'redux-action-namespacer';
 
-export const ACTIONS = nsActionTypes([
+let actionTypes = [
     'table', [
         'loading',
         'data',
@@ -31,14 +31,16 @@ export const ACTIONS = nsActionTypes([
             'search'
         ]
     ]
-]);
+];
+
+export const ACTIONS = nsActionTypes(actionTypes);
 ```
 
 Then, in your reducers file, you can import these action types to use directly in your reducers:
 
-(reducers.js)
+(reducers/reducers.js)
 ```
-import ACTIONS from './actionTypes.js';
+import ACTIONS from '../actionTypes/actionTypes.js';
 
 const tablesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -46,7 +48,23 @@ const tablesReducer = (state = initialState, action) => {
             ...
     }
 }
+
 export default tablesReducer;
+```
+
+The `nsActionTypesCheck()` function can be used check that there are no namespace conflicts within your action type definitions. It would be best to use this function in your test suite to make a one-time test against your action types definitions. For example:
+
+test/test.js
+```
+import { actionTypes } from '../actionTypes/actionTypes.js';
+import { nsActionTypesCheck } from 'redux-action-namespacer';
+
+describe('nsActionTypesCheck()', function() {
+    it('should return true when action type definitions are valid', function () {
+       let result = nsActionTypesCheck(actionsTypes);
+       expect(result).to.be.true;
+    });
+});
 ```
 
 ### How it works.
