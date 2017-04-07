@@ -42,7 +42,7 @@ Then, in your reducers file, you can import these action types to use directly i
 
 *reducers/reducers.js*
 ```javascript
-import ACTIONS from '../actionTypes/actionTypes.js';
+import { ACTIONS } from '../actionTypes/actionTypes.js';
 
 const tablesReducer = (state = initialState, action) => {
     switch (action.type) {
